@@ -46,14 +46,22 @@ Escribe un programa que impriman los 50 primeros números de la sucesión de Fib
 def Fibonacci():
     prev = 0
     next = 1
-    for i in range (0, 51):
-        print (prev)
-        fib = prev + next
-        prev = next
-        next = fib
-
-
+    for i in range(0, 51):
+       fib = prev + next
+       print (prev)
+       prev = next
+       next = fib
 
 Fibonacci()
+
+
+'''
+Crea un programa que invierta el orden de una cadena de texto 
+'''
+
+cadena_de_texto = 'Esto es una cadena de texto'
+print (cadena_de_texto[::-1])
+
+
 
 
