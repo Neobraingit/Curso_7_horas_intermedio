@@ -1,44 +1,55 @@
-# Expresiones regulares
+# Esxtresiones regulares
 
 import re
 
-my_string = 'Soy una cadena de texto para hacer los ejemplos...'
-my_other_string = 'Esto es otra string'
+texto = 'Me gusta el chocolate con nata pero mis gatas son unas pesadas'
 
-match = re.match('Soy una cadena', my_string, re.I)
-print (match)
+resultado = re.search('Me gusta', texto) # Solamente la primera aparición
 
-
-
-
-
-print (re.match('hacer los ejemplos', my_string, re.I)) # Con esto sabemos si el string tiene esta porción de texto
-print (re.match('Soy una cadena', my_other_string))
-
-
-# Search
-search = re.search('para hacer los ejercicios', my_string, re.I)
-print (search)
+if resultado != None:
+    print ('Búsqueda exitosa')
+    print (resultado)
+else:
+    print ('No se encontró el patrón buscado')
 
 # Findall
 
-findall = re.findall('hacer los ejemplos...', my_string, re.I) # Nos busca lo indicado y nos devuelve una lista con el número de veces que aparece
-print (findall)
+resultado = re.findall('son', texto) # Nos busca todas las apariciones
+if resultado != None:
+    print ('Búsqueda exitosa')
+    print (resultado)
+else:
+    print ('No se encontró el patrón buscado')
 
-# Split
+resultado = re.findall('perro', texto)
+if resultado != None:
+    print ('Búsqueda exitosa')
+    print (resultado)
+else:
+    print ('No se encontró el patrón buscado')
 
-split = re.split('\n', my_string)
-print (split)
+# Acento circunflejo
 
-#Sub
+import re
 
-sub = re.sub('Soy una cadena', 'Esto es una cadena guapa', my_string) # Nos sustituye una cosa por otra
-print (sub)
+texto = 'Me llamo Marcos Carmona'
+print (re.search('^Me', texto))
 
-# Búsqueda de caracteres
+# Signo $
+for frase in texto:
+    if re.search('es$', frase): # El signo $ nos indica que frases terminan con el string pasado
+        print (frase)
 
-caracteres = r'[a-z]'
-print (re.findall(caracteres, my_string))
-print (re.search(caracteres, my_string))
+# Utilización de los []
+
+
+
+
+
+
+
+
+
+
 
 
